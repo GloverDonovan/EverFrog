@@ -8,9 +8,9 @@ gulp.task("scripts", function() {
 
 	return gulp.src("javascript/*.es6")
 		.pipe(babel())
-		.pipe(concat("app.js"))
+		.pipe(concat("main.js"))
 		.pipe(gulp.dest("app/assets"))
-		.pipe(rename("app.min.js"))
+		.pipe(rename("main.min.js"))
 		.pipe(uglify())
 		.pipe(gulp.dest("app/assets"));
 
