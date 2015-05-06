@@ -16,4 +16,10 @@ gulp.task("scripts", function() {
 
 });
 
+gulp.task("watch", function() {
+
+	gulp.watch("javascript/*.es6", ["scripts"]);
+	
+});
+
 gulp.task("default", ["scripts"]);
