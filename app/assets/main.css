@@ -359,6 +359,22 @@ main {
   background: #fff;
   padding: 50px 20px; }
 
-.lead h2 {
-  font-size: 1.6em;
-  text-align: center; }
+.lead {
+  padding: 50px 20px;
+  color: #fff;
+  font-weight: 700; }
+  .lead h2 {
+    font-size: 1.6em;
+    text-align: center;
+    margin-bottom: 5rem; }
+  .lead span {
+    text-align: center;
+    color: white;
+    background: black;
+    padding: 20px 40px; }
+
+.cd-nav {
+  background: url(../img/bg.jpg); }
+
+main {
+  background: url(../img/bg-2.jpg); }
