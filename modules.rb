@@ -1,4 +1,6 @@
 require "fileutils"
+require "colorize"
+require "uglifier"
 
 require "./modules/build/sass.rb"
 

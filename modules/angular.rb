@@ -23,6 +23,12 @@ module Angular
 		
 		Combine.files(files, given_output)
 		
+		min = given_output.gsub(".js", ".min.js")
+		File.open(min, "w") do |file| 
+			x = Uglifier.compile(File.read(given_output))
+			file.write(x)
+		end
+		
 	end
 	
 end
