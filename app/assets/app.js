@@ -10,9 +10,9 @@ angular.module("EverFrog").config(["$routeProvider", function($routeProvider) {
 			templateUrl: "templates/pages/home/default.htm",
 			controller: "HomeIndexController"
 		})
-		.when("/team", {
-			templateUrl: "templates/pages/team/default.htm",
-			controller: "TeamIndexController"
+		.when("/about", {
+			templateUrl: "templates/pages/about/default.htm",
+			controller: "AboutIndexController"
 		})
 		.when("/info", {
 			templateUrl: "templates/pages/info/default.htm",
@@ -76,11 +76,25 @@ angular.module("EverFrog").directive("everfrogNav", [function() {
 	
 }]);
 
+angular.module("EverFrog").controller("AboutIndexController", ["$scope", function($scope) {
+	
+}]);
+
 angular.module("EverFrog").controller("ContactIndexController", ["$scope", function($scope) {
 	
 }]);
 
 angular.module("EverFrog").controller("HomeIndexController", ["$scope", function($scope) {
+
+}]);
+
+angular.module("EverFrog").controller("InfoIndexController", ["$scope", function($scope) {
+	
+}]);
+
+angular.module("EverFrog").controller("RootAppController", ["$scope", function($scope) {
+
+	
 	
 }]);
 
