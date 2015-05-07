@@ -354,3 +354,11 @@ main {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
+
+.card {
+  background: #fff;
+  padding: 50px 20px; }
+
+.lead h2 {
+  font-size: 1.6em;
+  text-align: center; }
