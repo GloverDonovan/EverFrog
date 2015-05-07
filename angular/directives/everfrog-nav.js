@@ -35,6 +35,7 @@ angular.module("EverFrog").directive("everfrogNav", [function() {
 			$(".cd-primary-nav a").on("click", function(e) {
 				$(last).removeClass("selected");
 				$(this).addClass("selected");
+				$("main").css("background", "url(img/bg-" + $(this).data("img") + ".jpg)");
 				last = this;
 				doNav();
 			});
