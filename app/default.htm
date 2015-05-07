@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" ng-app="EverFrog">
 
 	<head>
 
@@ -21,7 +21,7 @@
 
 		<!-- Main content -->
 		<main>
-			
+			<div ng-view>
 			<h1>We have the data. You have the skills.</h1>
 			<h2>Help us analyze big data at EverFrog.</h2>
 			
@@ -68,6 +68,9 @@
 		</div> <!-- .cd-nav -->
 
 		<script src="assets/vendor/jquery-2.1.4.min.js"></script>
+		<script src="assets/vendor/angular.min.js"></script>
+		<script src="assets/vendor/angular-route.min.js"></script>
+		<script src="assets/main.js"></script>
 		<script src="assets/app.js"></script>
 
 	</body>
