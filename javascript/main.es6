@@ -1,5 +1,6 @@
 ;(($, window, document, undefined) => {
 
+/*
 	let isLateralNavAnimating = false;
 	
 	var last = ".selected";
@@ -35,5 +36,6 @@
 		});
 
 	});
+*/
 
 })(jQuery, window, document);
