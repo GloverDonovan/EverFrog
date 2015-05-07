@@ -8,9 +8,9 @@ angular.module("EverFrog").config(["$routeProvider", function($routeProvider) {
 			templateUrl: "templates/pages/home/default.htm",
 			controller: "HomeIndexController"
 		})
-		.when("/team", {
-			templateUrl: "templates/pages/team/default.htm",
-			controller: "TeamIndexController"
+		.when("/about", {
+			templateUrl: "templates/pages/about/default.htm",
+			controller: "AboutIndexController"
 		})
 		.when("/info", {
 			templateUrl: "templates/pages/info/default.htm",
