@@ -3,7 +3,11 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 	return {
 		
 		replace: true,
+		transclude: true,
 		restrict: "E",
+		scope: {
+			lead: "@"
+		},
 		templateUrl: "templates/directives/everfrog-modal.htm",
 		controller: function($scope) {},
 		link: function(scope, element, attrs) {
@@ -100,6 +104,7 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 					window.requestAnimationFrame(updateLayer);
 				}
 			});
+
 		}
 		
 	};
