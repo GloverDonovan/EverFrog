@@ -532,8 +532,12 @@ main {
   .card p {
     color: #222; }
 
+.cd-section {
+  background: none;
+  padding: 0; }
+
 .lead {
-  padding: 50px 20px;
+  padding: 50px 20px 0 50px;
   color: #fff;
   text-shadow: 4px 4px 12px #000;
   font-weight: 700; }

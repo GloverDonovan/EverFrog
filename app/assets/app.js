@@ -83,12 +83,9 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 			};
 
 			var closeModal = function() {
-
 				var section = $('.cd-section.modal-is-visible');
 				animateLayer(section.find('.cd-modal-bg'), 1, false);
-				section.removeClass('modal-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-					
-				});
+				section.removeClass('modal-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {});
 
 				//if browser doesn't support transitions...
 				if(section.parents('.no-csstransitions').length > 0 ) {
