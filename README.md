@@ -13,6 +13,7 @@ Made with:
 - ECMAScript 6
 - Sass
 - Bundler
+- Babel.js
 - Animate.css
 - jQuery Velocity
 - Angular Route
