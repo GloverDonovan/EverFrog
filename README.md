@@ -1,3 +1,25 @@
+Made with:
+
+- HTML5
+- CSS3
+- JavaScript
+- jQuery
+- Python
+- Node.js
+- Bash
+- Modernizr
+- Ruby
+- Angular.js
+- ECMAScript 6
+- Sass
+- Bundler
+- Animate.css
+- jQuery Velocity
+- Angular Route
+- Bourbon
+- Gulp.js
+- The Princess and the Frog
+
 Download dependencies:
 ```
 bundle install
