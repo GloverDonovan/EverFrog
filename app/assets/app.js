@@ -33,7 +33,11 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 	return {
 		
 		replace: true,
+		transclude: true,
 		restrict: "E",
+		scope: {
+			lead: "@"
+		},
 		templateUrl: "templates/directives/everfrog-modal.htm",
 		controller: function($scope) {},
 		link: function(scope, element, attrs) {
@@ -130,6 +134,7 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 					window.requestAnimationFrame(updateLayer);
 				}
 			});
+
 		}
 		
 	};
@@ -242,7 +247,7 @@ angular.module("EverFrog").controller("RootAppController", ["$scope", function($
 
 	$scope.meta = {
 		"title": "We're hiring! Data Scientist @ EverFrog",
-		"description": "",
+		"description": "Join us in analyzing big data at EverFrog. We are currently hiring and specialize in the advancement of Frog kind.",
 		"keywords": "data scientist, everfrog, big data, tech careers, tech jobs, computer science, frogs",
 		"shortname": "home"
 	};
@@ -257,7 +262,7 @@ angular.module("EverFrog").controller("RootAppController", ["$scope", function($
 			$("main").css("background", "url(img/bg-" + x.data("img") + ".jpg)");
 			didFinishInitializingOnLoad = true;
 		}
-		
+
 	});
 
 }]);
