@@ -38,3 +38,9 @@ Build JavaScript (ES6):
 ```
 gulp
 ```
+
+Deploy:
+```
+cd app
+firefox default.htm
+```
