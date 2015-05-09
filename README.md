@@ -19,6 +19,7 @@ Made with:
 - Angular Route
 - Bourbon
 - Gulp.js
+- Google Maps API
 - The Princess and the Frog
 
 Download dependencies:
