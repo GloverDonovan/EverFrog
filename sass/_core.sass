@@ -16,7 +16,11 @@
 
 .cd-section
 	background: none
-	padding: 0
+	padding: 0 0.8em
+	display: inline-block
+
+.center-text
+	text-align: center
 
 .lead
 	padding: 50px 20px 0 50px
@@ -47,4 +51,36 @@ main
 
 #map
 	width: 100%
-	height: 500px
+	height: 800px
+
+input
+	background: white!important
+	color: black!important
+
+// Prevent horizontal scrolling
+html, body, main
+	max-width: 100%1important
+	overflow-x: hidden!important
+
+.cd-modal .cd-modal-content
+	overflow-y: hidden!important
+	height: auto!important
+
+.cd-modal::after
+	width: 0
+	height: 0
+	background: none
+
+.cd-modal-action .cd-modal-bg
+	border-radius: 0
+
+.cd-modal-action .btn
+	border-radius: 0
+
+.no-select, .lead
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
