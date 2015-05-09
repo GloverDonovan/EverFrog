@@ -15,8 +15,11 @@ angular.module("EverFrog").directive("everfrogMap", [function() {
 					// How zoomed in you want the map to start at (always required)
 					zoom: 11,
 
+					scrollwheel: false,
+					scaleControl: false,
+
 					// The latitude and longitude to center the map (always required)
-					center: new google.maps.LatLng(40.6700, -73.9400), // New York
+					center: new google.maps.LatLng(28.546482, -81.384886), // Orlando
 
 					// How you would like to style the map. 
 					// This is where you would paste any style found on Snazzy Maps.
@@ -32,7 +35,7 @@ angular.module("EverFrog").directive("everfrogMap", [function() {
 
 				// Let's also add a marker while we're at it
 				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(40.6700, -73.9400),
+					position: new google.maps.LatLng(28.546482, -81.384886),
 					map: map,
 					title: 'Snazzy!'
 				});

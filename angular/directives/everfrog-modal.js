@@ -6,7 +6,8 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 		transclude: true,
 		restrict: "E",
 		scope: {
-			lead: "@"
+			lead: "@",
+			header: "@"
 		},
 		templateUrl: "templates/directives/everfrog-modal.htm",
 		controller: function($scope) {},
@@ -76,7 +77,7 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 					scaleValue = retrieveScale(actionBtn.next(".cd-modal-bg"));
 				
 				actionBtn.addClass('to-circle');
-				actionBtn.next('.cd-modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				actionBtn.next('.cd-modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
 					animateLayer(actionBtn.next('.cd-modal-bg'), scaleValue, true);
 				});
 

@@ -8,23 +8,38 @@ angular.module("EverFrog").directive("everfrogNav", [function() {
 		controller: function($scope) {},
 		link: function(scope, element, attrs) {
 
+			// Objective-C variables ftw
 			var isLateralNavAnimating = false;
+			var didFinishLaunchingWithTimeout = true;
+			var setVariableDidFinishLaunchingWithTimeout = function() {
+				didFinishLaunchingWithTimeout = true;
+			}
 			
 			var last = ".selected";
 
 			var doNav = function() {
+
 				if(!isLateralNavAnimating) {
 
-					if($(this).parents('.csstransitions').length > 0) {
-						isLateralNavAnimating = true;
+					if(didFinishLaunchingWithTimeout) {
+
+						didFinishLaunchingWithTimeout = false;
+
+						if($(this).parents('.csstransitions').length > 0) {
+							isLateralNavAnimating = true;
+						}
+
+						$("body").toggleClass("navigation-is-open");
+						$(".cd-navigation-wrapper").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+							isLateralNavAnimating = false;
+						});
+
+						setTimeout(setVariableDidFinishLaunchingWithTimeout, 1000);
+
 					}
 
-					$("body").toggleClass("navigation-is-open");
-					$(".cd-navigation-wrapper").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
-						isLateralNavAnimating = false;
-					});
-
 				}
+
 			};
 
 			$(".cd-nav-trigger").on("click", function(e) {
