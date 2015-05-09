@@ -732,7 +732,8 @@ main {
 
 main {
   background: white;
-  background-size: cover !important; }
+  background-size: cover !important;
+  padding-top: 180px; }
   main p {
     max-width: 100%; }
 
