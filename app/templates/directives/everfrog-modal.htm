@@ -1,11 +1,14 @@
 <section class="cd-section">
 	<div class="cd-modal-action">
-		<a href="#0" class="btn" data-type="modal-trigger">{{ lead }}</a>
+		<a href="#0" class="btn no-select" data-type="modal-trigger">{{ lead }}</a>
 		<span class="cd-modal-bg"></span>
 	</div>
 
 	<div class="cd-modal">
-		<div class="cd-modal-content" ng-transclude></div>
+		<div class="cd-modal-content">
+			<h1>{{ header }}</h1>
+			<div ng-transclude></div>
+		</div>
 	</div>
 
 	<a href="#0" class="cd-modal-close">Close</a>
