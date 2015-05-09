@@ -28,6 +28,20 @@ angular.module("EverFrog").config(["$routeProvider", function($routeProvider) {
 
 }]);
 
+angular.module("EverFrog").directive("everfrogForm", [function() {
+	
+	return {
+		
+		replace: true,
+		restrict: "E",
+		templateUrl: "templates/directives/everfrog-form.htm",
+		controller: function($scope) {},
+		link: function(scope, element, attrs) {}
+		
+	};
+	
+}]);
+
 angular.module("EverFrog").directive("everfrogMap", [function() {
 	
 	return {
@@ -45,8 +59,11 @@ angular.module("EverFrog").directive("everfrogMap", [function() {
 					// How zoomed in you want the map to start at (always required)
 					zoom: 11,
 
+					scrollwheel: false,
+					scaleControl: false,
+
 					// The latitude and longitude to center the map (always required)
-					center: new google.maps.LatLng(40.6700, -73.9400), // New York
+					center: new google.maps.LatLng(28.546482, -81.384886), // Orlando
 
 					// How you would like to style the map. 
 					// This is where you would paste any style found on Snazzy Maps.
@@ -62,7 +79,7 @@ angular.module("EverFrog").directive("everfrogMap", [function() {
 
 				// Let's also add a marker while we're at it
 				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(40.6700, -73.9400),
+					position: new google.maps.LatLng(28.546482, -81.384886),
 					map: map,
 					title: 'Snazzy!'
 				});
@@ -84,7 +101,8 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 		transclude: true,
 		restrict: "E",
 		scope: {
-			lead: "@"
+			lead: "@",
+			header: "@"
 		},
 		templateUrl: "templates/directives/everfrog-modal.htm",
 		controller: function($scope) {},
@@ -154,7 +172,7 @@ angular.module("EverFrog").directive("everfrogModal", [function() {
 					scaleValue = retrieveScale(actionBtn.next(".cd-modal-bg"));
 				
 				actionBtn.addClass('to-circle');
-				actionBtn.next('.cd-modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				actionBtn.next('.cd-modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
 					animateLayer(actionBtn.next('.cd-modal-bg'), scaleValue, true);
 				});
 
@@ -199,23 +217,38 @@ angular.module("EverFrog").directive("everfrogNav", [function() {
 		controller: function($scope) {},
 		link: function(scope, element, attrs) {
 
+			// Objective-C variables ftw
 			var isLateralNavAnimating = false;
+			var didFinishLaunchingWithTimeout = true;
+			var setVariableDidFinishLaunchingWithTimeout = function() {
+				didFinishLaunchingWithTimeout = true;
+			}
 			
 			var last = ".selected";
 
 			var doNav = function() {
+
 				if(!isLateralNavAnimating) {
 
-					if($(this).parents('.csstransitions').length > 0) {
-						isLateralNavAnimating = true;
+					if(didFinishLaunchingWithTimeout) {
+
+						didFinishLaunchingWithTimeout = false;
+
+						if($(this).parents('.csstransitions').length > 0) {
+							isLateralNavAnimating = true;
+						}
+
+						$("body").toggleClass("navigation-is-open");
+						$(".cd-navigation-wrapper").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+							isLateralNavAnimating = false;
+						});
+
+						setTimeout(setVariableDidFinishLaunchingWithTimeout, 1000);
+
 					}
 
-					$("body").toggleClass("navigation-is-open");
-					$(".cd-navigation-wrapper").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
-						isLateralNavAnimating = false;
-					});
-
 				}
+
 			};
 
 			$(".cd-nav-trigger").on("click", function(e) {
