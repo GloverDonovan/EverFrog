@@ -1,1 +1,1 @@
-angular.module("EverFrog", ["ngRoute"]).config(function() {})
+angular.module("EverFrog", ["ngRoute"]).config(function() {});
