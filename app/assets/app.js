@@ -222,7 +222,7 @@ angular.module("EverFrog").directive("everfrogNav", [function() {
 			var didFinishLaunchingWithTimeout = true;
 			var setVariableDidFinishLaunchingWithTimeout = function() {
 				didFinishLaunchingWithTimeout = true;
-			}
+			};
 			
 			var last = ".selected";
 
@@ -243,7 +243,7 @@ angular.module("EverFrog").directive("everfrogNav", [function() {
 							isLateralNavAnimating = false;
 						});
 
-						setTimeout(setVariableDidFinishLaunchingWithTimeout, 1000);
+						setTimeout(setVariableDidFinishLaunchingWithTimeout, 600);
 
 					}
 

@@ -729,6 +729,10 @@ main {
   background: url(../img/bg.jpg);
   background-size: cover !important; }
 
+body:after {
+  display: none;
+  content: url(../img/bg.jpg) url(../img/bg-1.jpg) url(../img/bg-2.jpg) url(../img/bg-3.jpg) url(../img/bg-4.jpg); }
+
 main {
   background: white;
   background-size: cover !important;
@@ -744,24 +748,16 @@ input {
   background: white !important;
   color: black !important; }
 
-html, body, main {
-  max-width: 100% 1important;
-  overflow-x: hidden !important; }
-
-.cd-modal .cd-modal-content {
-  overflow-y: hidden !important;
-  height: auto !important; }
-
-.cd-modal::after {
-  width: 0;
-  height: 0;
-  background: none; }
-
 .cd-modal-action .cd-modal-bg {
   border-radius: 0; }
 
 .cd-modal-action .btn {
   border-radius: 0; }
+
+.cd-modal::after {
+  width: 0;
+  height: 0;
+  background: none; }
 
 .no-select, .lead {
   -webkit-touch-callout: none;
@@ -771,6 +767,14 @@ html, body, main {
   -ms-user-select: none;
   user-select: none; }
 
+@-moz-document url-prefix() {
+  html, body, main {
+    max-width: 100% 1important;
+    overflow-x: hidden !important; }
+
+  .cd-modal .cd-modal-content {
+    overflow-y: hidden !important;
+    height: auto !important; } }
 @media screen and (max-width: 480px) {
   main {
     padding: 5px; }
