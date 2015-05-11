@@ -2,8 +2,8 @@ angular.module("EverFrog").controller("AboutIndexController", ["$scope", functio
 	
 	$scope.$emit("newPageLoaded", {
 
-		"title": "About EverFrog",
-		"description": "",
+		"title": "Just Who Are We? - EverFrog",
+		"description": "We're EverFrog, a Disney-owned company that is based in Orlando, Florida. We study frogs, of course!",
 		"keywords": "everfrog, about, bio, computer science, frogs",
 		"shortname": "about"
 
