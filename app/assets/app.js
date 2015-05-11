@@ -274,8 +274,8 @@ angular.module("EverFrog").controller("AboutIndexController", ["$scope", functio
 	
 	$scope.$emit("newPageLoaded", {
 
-		"title": "About EverFrog",
-		"description": "",
+		"title": "Just Who Are We? - EverFrog",
+		"description": "We're EverFrog, a Disney-owned company that is based in Orlando, Florida. We study frogs, of course!",
 		"keywords": "everfrog, about, bio, computer science, frogs",
 		"shortname": "about"
 
@@ -287,9 +287,9 @@ angular.module("EverFrog").controller("ContactIndexController", ["$scope", funct
 	
 	$scope.$emit("newPageLoaded", {
 
-		"title": "",
-		"description": "",
-		"keywords": "",
+		"title": "Contact Us - EverFrog",
+		"description": "Ready to apply or have any questions? Send us an email and we'll get back to you soon!",
+		"keywords": "data scientist, everfrog, big data, tech careers, tech jobs, computer science, frogs, contact, apply",
 		"shortname": "contact"
 
 	});
@@ -300,9 +300,9 @@ angular.module("EverFrog").controller("HomeIndexController", ["$scope", function
 	
 	$scope.$emit("newPageLoaded", {
 
-		"title": "",
-		"description": "",
-		"keywords": "",
+		"title": "We're hiring! Data Scientist @ EverFrog",
+		"description": "Join us in analyzing big data at EverFrog. We are currently hiring and specialize in the advancement of Frog kind.",
+		"keywords": "data scientist, everfrog, big data, tech careers, tech jobs, computer science, frogs",
 		"shortname": "home"
 
 	});
@@ -313,9 +313,9 @@ angular.module("EverFrog").controller("InfoIndexController", ["$scope", function
 	
 	$scope.$emit("newPageLoaded", {
 
-		"title": "",
-		"description": "",
-		"keywords": "",
+		"title": "More Information - EverFrog",
+		"description": "Not sure if you would like to work at EverFrog? This page covers the information you need before applying.",
+		"keywords": "data scientist, everfrog, big data, tech careers, tech jobs, computer science, frogs, information",
 		"shortname": "info"
 
 	});
