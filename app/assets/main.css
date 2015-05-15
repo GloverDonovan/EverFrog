@@ -771,6 +771,27 @@ select {
     text-align: center; }
   .everfrog-content-wrapper p {
     text-align: left !important; }
+  .everfrog-content-wrapper img {
+    width: 100% !important; }
+  .everfrog-content-wrapper textarea {
+    width: 100% !important;
+    height: 150px !important;
+    color: #000 !important; }
+  .everfrog-content-wrapper form .cbtn {
+    text-align: center !important; }
+  .everfrog-content-wrapper form button {
+    background: #333 !important;
+    border: 1px solid #fff !important;
+    padding: 0.2em 0.8em !important; }
+    .everfrog-content-wrapper form button:hover {
+      background: #2ecc71;
+      border: 1px solid #ccc !important;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .everfrog-content-wrapper form p {
+    margin: 0.2em !important; }
 
 .cd-modal-content h1 {
   font-size: 2.2em; }
@@ -782,6 +803,10 @@ select {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+#wait, #out {
+  display: none;
+  text-align: center !important; }
 
 @-moz-document url-prefix() {
   html, body, main {
