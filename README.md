@@ -21,6 +21,7 @@ Made with:
 - Gulp.js
 - Google Maps API
 - The Princess and the Frog
+- Favicon from http://www.freefavicon.com/freefavicons/animal/iconinfo/frog-by-rones-152-173507.html
 
 Download dependencies:
 ```
