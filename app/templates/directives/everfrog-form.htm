@@ -8,22 +8,23 @@
 		<div id="step1">
 
 			<p>
-				<label for="fwFirstName">First name:</label>
-				<input type="text" id="fwFirstName">
-
-				<label for="fwLastName">Last Name:</label>
-				<input type="text" id="fwLastName">
-
-				<label for="fwMiddleInitial">Middle Initial:</label>
-				<input type="text" id="fwMiddleInitial">
+				<label for="fwName">Name:</label>
+				<input type="text" id="fwName" required>
+				<label for="fwName">(First / Middle Initial / Last)</label>
 			</p>
 
 		</div>
 
 		<div id="step2">
+			
+			<p>
+				<label for="fwCity">City:</label>
+				<input type="text" id="fwCity" required>
+			</p>
+			
 			<p>
 				<label for="fwState">State:</label>
-				<select id="fwState">
+				<select id="fwState" required>
 					<option></option>
 					<option value="Alabama">Alabama</option>
 					<option value="Alaska">Alaska</option>
@@ -79,19 +80,15 @@
 					<option value="Other">Other</option>
 				</select>
 			</p>
-			<p>
-				<label for="fwCity">City:</label>
-				<input type="text" id="fwCity">
-			</p>
 
 			<p>
 				<label for="fwAddress">Address:</label>
-				<input type="text" id="fwAddress">
+				<input type="text" id="fwAddress" required>
 			</p>
 
 			<p>
 				<label for="fwZip">Zip:</label>
-				<input type="text" id="fwZip">
+				<input type="number" id="fwZip" required>
 			</p>
 
 		</div>
@@ -102,7 +99,7 @@
 				<label for="fwMessage">Message:</label>
 			</p>
 			
-			<textarea id="fwMessage"></textarea>
+			<textarea id="fwMessage" required></textarea>
 			
 			<p>
 				<input type="checkbox" value="subscribe" id="fwSubscribe">
@@ -112,7 +109,9 @@
 		</div>
 		
 		<div id="step4">
-			<p><button>Send</button></p>
+			<p class="cbtn"><button>I'm ready, send the email.</button></p>
+			<p id="wait">Sending...</p>
+			<p id="out">Sent successfully! We'll get back to you within 48 hours.</p>
 		</div>
 
 	</form>
