@@ -1,0 +1,110 @@
+module Build
+	
+	def self.sass(given_file)
+		
+		return %x(sass #{given_file})
+		
+	end
+	
+end
+
+module Files
+	
+	def self.move(given_current_locations, given_new_location)
+		
+		(given_current_locations).each do |this_location|
+			
+			return false unless File.file?(this_location)
+			
+			new_location = given_new_location + this_location.split("/").last
+			FileUtils.mv(this_location, new_location)
+			Log.warn("'#{this_location}' successfully moved to '#{new_location}'.")
+			
+		end
+		
+	end
+
+end
+
+module Minify
+	
+	def self.css(given_file)
+		
+		return %x(python ./lib/cssmin.py #{given_file})
+		
+	end
+	
+end
+
+module Angular
+	
+	def self.parse(given_directory)
+		item_array = []
+		Dir.glob(given_directory) do |item|
+			next if item == '.' or item == '..'
+			item_array.push(item)
+		end
+		item_array.reverse!
+		item_array.sort_by!{|word| word.downcase}
+	end
+	
+	def self.compile(given_directory, given_output)
+		
+		main = self.parse(given_directory + "*.js") || []
+		controllers = self.parse(given_directory + "controllers/**/*.js") || []
+		directives = self.parse(given_directory + "directives/**/*.js") || []
+		filters = self.parse(given_directory + "filters/**/*.js") || []
+		resources = self.parse(given_directory + "resources/**/*.js") || []
+		services = self.parse(given_directory + "services/**/*.js") || []
+		
+		files = main + directives + services + resources + controllers + filters
+		
+		Combine.files(files, given_output)
+		
+	end
+	
+end
+
+module Combine
+	def self.files(given_files, given_output)
+		return_this = ""
+		
+		(given_files).each do |this_file|
+			unless File.file?(this_file)
+				return false
+			end
+			current_file = open(this_file.to_s)
+			return_this += current_file.read + "\n"
+			current_file.close
+		end
+		
+		if given_output
+			c = open(given_output, "w")
+			c.write(return_this)
+			c.close
+		end
+		
+		return return_this
+		
+	end
+end
+
+require "fileutils"
+
+require "./modules/build/sass.rb"
+
+require "./modules/files/move.rb"
+
+require "./modules/minify/css.rb"
+
+require "./modules/combine.rb"
+require "./modules/angular.rb"
+
+require "./modules.rb"
+
+x = Build.sass("./sass/main.sass")
+
+File.write("./app/assets/main.css", x)
+
+Angular.compile("./angular/", "./app/assets/app.js")
+
