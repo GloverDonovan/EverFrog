@@ -808,6 +808,9 @@ select {
   display: none;
   text-align: center !important; }
 
+.flash-container {
+  text-align: center !important; }
+
 @-moz-document url-prefix() {
   html, body, main {
     max-width: 100% 1important;
