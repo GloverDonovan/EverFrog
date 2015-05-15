@@ -22,6 +22,7 @@ Made with:
 - Google Maps API
 - The Princess and the Frog
 - Favicon from http://www.freefavicon.com/freefavicons/animal/iconinfo/frog-by-rones-152-173507.html
+- Huge thanks to [CodyHouse](http://codyhouse.co/) for its "free library of HTML, CSS, [and] JS nuggets"
 
 Download dependencies:
 ```
